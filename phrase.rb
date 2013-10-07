@@ -17,7 +17,7 @@ class Phrase
 
   private
   def split_phrase
-    @phrase.split
+    @phrase.split(/\s|,|\.|-/) # split on white-space, commas, full-stops, or hyphens
   end
 end
 
