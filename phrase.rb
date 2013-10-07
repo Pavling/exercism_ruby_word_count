@@ -6,7 +6,7 @@ class Phrase
 
   def word_count
     words = split_phrase
-    words.map!{|word| word.gsub(/[^a-zA-Z0-9]/, '')}
+    words.map!{|word| word.downcase.gsub(/[^a-zA-Z0-9]/, '')}
     words.delete_if(&:empty?)
     words.inject({}) do |memo, word|
       memo[word] ||= 0
